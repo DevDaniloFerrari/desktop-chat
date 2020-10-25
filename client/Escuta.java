@@ -14,9 +14,9 @@ import util.Mensagem;
 public class Escuta extends Thread {
     Socket socket;
     ObjectInputStream in;
-    JTextArea historico;
+    String historico;
 
-    public Escuta(Socket sc, JTextArea hist) {
+    public Escuta(Socket sc, String hist) {
         socket = sc;
         historico = hist;
     }
@@ -29,8 +29,9 @@ public class Escuta extends Thread {
 
             while (true) {
                 msg = (Mensagem) in.readObject();
-                if(msg != null){
-                    historico.append( msg.getNome() + "> " + msg.getTexto() + "\n");
+                if (msg != null) {
+                    historico += (msg.getNome() + "> " + msg.getTexto() + "\n");
+                    System.out.println(historico);
                 }
             }
         } catch (Exception e) {

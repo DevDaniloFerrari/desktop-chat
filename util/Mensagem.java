@@ -2,11 +2,6 @@ package util;
 
 import java.io.Serializable;
 
-/**
- *
- * @author Emerson S. Paduan <emerson@paduan.pro.br>
- */
-
 public class Mensagem implements Serializable {
     private static final long serialVersionUID = 1L;
 
