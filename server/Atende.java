@@ -8,11 +8,6 @@ import java.util.ArrayList;
 import util.Comunicacao;
 import util.Mensagem;
 
-/**
- *
- * @author Emerson S. Paduan <emerson@paduan.pro.br>
- */
-
 public class Atende extends Thread {
     Socket cliente;
     Comunicacao comunicacao;
@@ -31,10 +26,10 @@ public class Atende extends Thread {
 
         while (online) {
             msg = (Mensagem) comunicacao.receive();
-            if(msg == null){
+            if (msg == null) {
                 atendimentos.remove(this);
                 online = false;
-            }else{
+            } else {
                 for (Atende atende : atendimentos) {
                     atende.enviar(msg);
                 }

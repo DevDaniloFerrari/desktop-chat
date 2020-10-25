@@ -4,10 +4,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
-/**
- *
- * @author Emerson S. Paduan <emerson@paduan.pro.br>
- */
 public class Servidor {
     private static ArrayList<Atende> atendimentos = new ArrayList<>();
 
@@ -18,7 +14,7 @@ public class Servidor {
 
         try {
             srv = new ServerSocket(PORTA);
-            while(true){
+            while (true) {
                 System.out.println("Aguardando conexão...");
                 cliente = srv.accept();
                 Atende atende = new Atende(cliente, atendimentos);

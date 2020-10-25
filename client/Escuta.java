@@ -6,11 +6,6 @@ import javax.swing.JTextArea;
 
 import util.Mensagem;
 
-/**
- *
- * @author Emerson S. Paduan <emerson@paduan.pro.br>
- */
-
 public class Escuta extends Thread {
     Socket socket;
     ObjectInputStream in;
